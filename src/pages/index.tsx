@@ -14,7 +14,7 @@ const Page = () => {
       <div>Frist</div>
       <button
         onClick={() => {
-          loginUser("test@testauth.com", "12341234")
+          loginUser("t@t.com", "123456")
             .then(async (userCredential: any) => {
               const user = userCredential.user;
               //👇🏻 logs user's details
