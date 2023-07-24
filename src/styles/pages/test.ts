@@ -3,6 +3,7 @@ import { styled } from '..';
 export const Form = styled('form', {
   display: 'flex',
   alignItems: 'center',
+  justifyContent: 'center',
   flexDirection: 'column',
 
   img: {

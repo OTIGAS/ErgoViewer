@@ -21,17 +21,17 @@ export const UserEmailVerification = () => {
   const [message, setMessage] = useState<string>('');
 
   auth.languageCode = 'pt-BR';
-  const handleVerified = auth.currentUser;
+  // const handleVerified = auth.currentUser;
 
   async function handleSubmit(event: any) {
     event.preventDefault();
     setLoading(true);
 
-    if (handleVerified) {
+    if (auth.currentUser) {
       // IMPORTANTE
       // Quantidade maxima de teste por email é de 3, caso
       // contrario email será bloqueado para outros testes.
-      sendEmailVerification(handleVerified)
+      sendEmailVerification(auth.currentUser)
         .then((response) => {
           console.log(response);
           setMessage('E-mail de verificação enviado com sucesso.');
@@ -55,15 +55,15 @@ export const UserEmailVerification = () => {
     console.log('Context User: ', user);
   }
 
-  function handleClick() {
-    console.log(handleVerified?.emailVerified);
-    if (auth.currentUser?.emailVerified) {
-      setVerifiedEmail(true);
-      console.log('Email verificado.');
-    } else {
-      console.log('Email não verificado.');
-    }
-  }
+  // function handleClick() {
+  //   console.log(handleVerified?.emailVerified);
+  //   if (auth.currentUser?.emailVerified) {
+  //     setVerifiedEmail(true);
+  //     console.log('Email verificado.');
+  //   } else {
+  //     console.log('Email não verificado.');
+  //   }
+  // }
 
   return (
     <Form onSubmit={handleSubmit}>
@@ -76,7 +76,7 @@ export const UserEmailVerification = () => {
         onChange={({ target }) => setUserEmail(target.value)}
       />
       <label>{message}</label>
-      <label onClick={handleClick}>
+      <label>
         {verifiedEmail === true
           ? 'E-mail verificado.'
           : 'E-mail não verificado.'}
