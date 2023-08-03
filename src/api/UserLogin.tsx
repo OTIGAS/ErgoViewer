@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 import { useContext, useState } from 'react';
 
 import { UserContext } from '@/src/context/UserContext';
@@ -7,6 +5,7 @@ import { UserContext } from '@/src/context/UserContext';
 import { auth } from '@/src/service/firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 
+import Image from 'next/image';
 import img from '../assets/loading.gif';
 
 import { Form, Input, Button } from '@/src/styles/pages/test';
@@ -43,14 +42,12 @@ export const UserLogin = () => {
       .finally(() => {
         setLoading(false);
       });
-
-    console.log('Context User: ', user);
   }
 
   return (
     <Form onSubmit={handleSubmit}>
       {loading && <Image src={img} alt="Imagem de loading..." />}
-      <h1>User Login</h1>
+      <h1>Login</h1>
       <Input
         placeholder="Email"
         type="email"

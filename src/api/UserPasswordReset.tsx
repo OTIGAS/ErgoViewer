@@ -48,14 +48,12 @@ export const UserPasswordReset = () => {
       .finally(() => {
         setLoading(false);
       });
-
-    console.log('Context User: ', user);
   }
 
   return (
     <Form onSubmit={handleSubmit}>
       {loading && <Image src={img} alt="Imagem de loading..." />}
-      <h1>User Password Reset</h1>
+      <h1>Password Reset</h1>
       <Input
         placeholder="Email"
         type="email"

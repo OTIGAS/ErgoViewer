@@ -33,14 +33,12 @@ export const UserLogout = () => {
       .finally(() => {
         setLoading(false);
       });
-
-    console.log('Context User: ', user);
   }
 
   return (
     <Form onSubmit={handleSubmit}>
       {loading && <Image src={img} alt="Imagem de loading..." />}
-      <h1>User Logout</h1>
+      <h1>Logout</h1>
       <label>{message}</label>
       <Button>Enviar</Button>
     </Form>

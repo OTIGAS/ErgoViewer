@@ -12,7 +12,7 @@ import img from '../assets/loading.gif';
 import { Input, Button, Form } from '@/src/styles/pages/test';
 
 export const UserCreate = () => {
-  const { user, setUser } = useContext(UserContext);
+  const { setUser } = useContext(UserContext);
 
   const [userEmail, setUserEmail] = useState<string>('');
   const [userPassword, setUserPassword] = useState<string>('');
@@ -36,14 +36,12 @@ export const UserCreate = () => {
       .finally(() => {
         setLoading(false);
       });
-
-    console.log('Context User: ', user);
   }
 
   return (
     <Form onSubmit={handleSubmit}>
       {loading && <Image src={img} alt="Imagem de loading..." />}
-      <h1>User Create</h1>
+      <h1>Create account</h1>
       <Input
         placeholder="Email"
         type="email"

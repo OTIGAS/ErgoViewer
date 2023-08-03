@@ -51,8 +51,6 @@ export const UserEmailVerification = () => {
       console.log(auth);
       setMessage('Nenhum usuário logado.');
     }
-
-    console.log('Context User: ', user);
   }
 
   // function handleClick() {
@@ -68,7 +66,7 @@ export const UserEmailVerification = () => {
   return (
     <Form onSubmit={handleSubmit}>
       {loading && <Image src={img} alt="Imagem de loading..." />}
-      <h1>User Send E-mail Verification</h1>
+      <h1>Email verification</h1>
       <Input
         placeholder="Email"
         type="email"
