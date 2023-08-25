@@ -1,5 +1,14 @@
 import { styled } from '..';
 
+export const Div = styled('div', {
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+
+  width: '100vw',
+  height: '100vh'
+});
+
 export const Form = styled('form', {
   display: 'flex',
   alignItems: 'center',
@@ -21,7 +30,10 @@ export const Button = styled('button', {
   width: 200,
   margin: '0 auto',
   marginTop: '0.5rem',
-  marginBottom: '2rem',
+});
+
+export const Label = styled('label', {
+  marginTop: '0.5rem'
 });
 
 export const Img = styled('img', {});

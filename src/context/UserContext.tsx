@@ -16,7 +16,7 @@ export function UserStorage({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<any>({});
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (userAuth) => {
+    onAuthStateChanged(auth, (userAuth) => {
       if (userAuth) {
         console.log(userAuth, 'O usuário está autenticado');
         setUser(userAuth);
@@ -26,8 +26,6 @@ export function UserStorage({ children }: { children: React.ReactNode }) {
       }
     });
 
-    // // Retornar uma função de limpeza para desinscrever o observador quando o componente for desmontado.
-    // return () => unsubscribe();
   }, []);
 
   return (
