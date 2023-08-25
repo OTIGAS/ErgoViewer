@@ -60,7 +60,7 @@ export default function UserCreate() {
           />
 
         <Button type='submit'>Enviar</Button>
-        <Button type='button' onClick={() => router.replace('../user/login')}>Voltar</Button>
+        <Button type='button' onClick={() => router.back()}>Voltar</Button>
         
         <Label>{message}</Label>
       </Form>

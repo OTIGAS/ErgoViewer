@@ -63,6 +63,8 @@ export default function UserLogin() {
 
         setUser(response.user);
         setMessage(`${response.user.displayName} autenticado.`);
+
+        router.replace('/user/home');
       })
       .catch((error) => {
         console.log(error);
@@ -95,7 +97,7 @@ export default function UserLogin() {
         <Button type='button' onClick={() => signInGoogle()}>Entrar com Google</Button>
         <Button type='button' onClick={() => router.replace('../user/create-account')}>Criar uma Conta</Button>
         <Button type='button' onClick={() => router.replace('../user/password-reset')}>Esqueci minha senha</Button>
-        
+                
         <Label>{message}</Label>
       </Form>
     </Div>

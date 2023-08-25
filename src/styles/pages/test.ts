@@ -2,11 +2,21 @@ import { styled } from '..';
 
 export const Div = styled('div', {
   display: 'flex',
-  justifyContent: 'center',
   alignItems: 'center',
+  justifyContent: 'center',
 
   width: '100vw',
-  height: '100vh'
+  height: '100vh',
+
+  div: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent:'center',
+
+    flexDirection: 'column',
+
+    gap: 5
+  }
 });
 
 export const Form = styled('form', {
