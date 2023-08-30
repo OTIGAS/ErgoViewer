@@ -36,6 +36,8 @@ export default function UserLogin() {
       .then((response) => {
         setUser(response.user);
         setMessage('Usuário logado com sucesso!');
+
+        router.replace('/user/home');
       })
       .catch((error) => {
         console.log(error);

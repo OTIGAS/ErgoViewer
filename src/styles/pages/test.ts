@@ -16,6 +16,11 @@ export const Div = styled('div', {
     flexDirection: 'column',
 
     gap: 5
+  },
+
+  img: {
+    width: 200,
+    height: 200,
   }
 });
 
@@ -46,4 +51,6 @@ export const Label = styled('label', {
   marginTop: '0.5rem'
 });
 
-export const Img = styled('img', {});
+export const Img = styled('img', {
+
+});

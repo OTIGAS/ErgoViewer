@@ -32,6 +32,8 @@ export default function UserPasswordReset() {
       .then((response) => {
         console.log(response);
         setMessage('E-mail para redefinição de senha enviado com sucesso.');
+
+        router.replace('../user');
       })
       .catch((error) => {
         console.log(error);
